@@ -4,7 +4,7 @@ import { AddressInputField } from ".";
 
 const meta: Meta<typeof AddressInputField> = {
   component: AddressInputField,
-  title: "/ui/components/inputs/AddressInputField",
+  title: "/components/input-field/AddressInputField",
 };
 
 export default meta;
