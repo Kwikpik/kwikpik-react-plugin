@@ -14,10 +14,8 @@ const Button: React.FC<CustomButtonProps> = ({ appliedStyle = "primary", width, 
       {...props}
       onClick={onPress}
       style={{ width, height }}
-      className={`flex justify-center items-center ${
-        appliedStyle === "primary"
-          ? "rounded-[8px] bg-[#0f0e0b] px-5 py-3"
-          : "rounded-[4px] bg-transparent border border-[#0f0e0b] px-2 py-1"
+      className={`flex rounded-[0.25rem] justify-center px-5 py-3 items-center ${
+        appliedStyle === "primary" ? "bg-[#0f0e0b] text-[#fff]" : "bg-transparent border border-[#0f0e0b] text-[#000]"
       }`}
     >
       {label}
