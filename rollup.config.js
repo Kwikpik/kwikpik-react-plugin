@@ -3,6 +3,7 @@ const { default: commonjs } = require("@rollup/plugin-commonjs");
 const { default: typescript } = require("@rollup/plugin-typescript");
 const peerDepsExternal = require("rollup-plugin-peer-deps-external");
 const postcss = require("rollup-plugin-postcss");
+const svg = require("rollup-plugin-svg");
 const tailwindcss = require("tailwindcss");
 
 const packageJson = require("./package.json");
@@ -23,6 +24,7 @@ module.exports = {
     },
   ],
   plugins: [
+    svg(),
     peerDepsExternal(),
     resolve({ extensions, browser: true }),
     commonjs(),
@@ -37,6 +39,6 @@ module.exports = {
       inject: {
         insertAt: "top",
       },
-    })
+    }),
   ],
 };
