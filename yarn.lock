@@ -1636,10 +1636,10 @@
   resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.4.0.tgz#08d6c5e20cf7e4cc02fd181c4b0c225cd31dbb60"
   integrity sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==
 
-"@kwikpik/kwikpik.js@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@kwikpik/kwikpik.js/-/kwikpik.js-1.0.1.tgz#c101b6358b30144dc1c99fa0c9f09a997420f545"
-  integrity sha512-l2hxl/TXgcyoyHWGSz8qz+S7qp0f4dr66A6dtF97dgDeTnN2kT+ZVUJh9cNvTaxpFzKxxTutMbxvTCDrjNwSng==
+"@kwikpik/kwikpik.js@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@kwikpik/kwikpik.js/-/kwikpik.js-1.1.0.tgz#0caede41426bcb37ea83653ddbb33c5aea7541fb"
+  integrity sha512-8NczqcD7adjR+5S77bpbM8o+kjmL5r9CnF/S6nPvaR+vs1oL91+xUPppTKSGzUVLFnVpqryk5O9Kbm6qufSc2w==
   dependencies:
     assert "^2.0.0"
     axios "^1.4.0"
@@ -4295,13 +4295,14 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.2.tgz#1d4bf9d572f11c14031f0436e1c10bc1f571f50b"
   integrity sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==
 
-daisyui@^3.1.7:
-  version "3.1.7"
-  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-3.1.7.tgz#030eea446566dfd8b18b7f7734c9f5cecf36f501"
-  integrity sha512-VQhaunQlB7Buo+AbE+S3i6H/eYknKEuKVHG67y7sbG58uEjeLK6n2rojG3YE7fwoOss6ldbUL8Oy0MyoJi0CHw==
+daisyui@^3.7.3:
+  version "3.7.3"
+  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-3.7.3.tgz#247cfefa0112c31679af9035eff65e1bd866f062"
+  integrity sha512-gKlz3RwfaukZxf8nQZsDAZ7quUSi7F8HjGGB34tkHruvfQB9cgVDQsmqUqSQtkAJYvzbrg/3dLUa9+5jF4iC1A==
   dependencies:
     colord "^2.9"
     css-selector-tokenizer "^0.8"
+    postcss "^8"
     postcss-js "^4"
     tailwindcss "^3"
 
@@ -7163,6 +7164,15 @@ postcss-value-parser@^4.0.0, postcss-value-parser@^4.1.0, postcss-value-parser@^
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz#723c09920836ba6d3e5af019f92bc0971c02e514"
   integrity sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==
+
+postcss@^8:
+  version "8.4.29"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.29.tgz#33bc121cf3b3688d4ddef50be869b2a54185a1dd"
+  integrity sha512-cbI+jaqIeu/VGqXEarWkRCCffhjgXc0qjBtXpqJhTBohMUjUQnbBr0xqX3vEKudc4iviTewcJo5ajcec5+wdJw==
+  dependencies:
+    nanoid "^3.3.6"
+    picocolors "^1.0.0"
+    source-map-js "^1.0.2"
 
 postcss@^8.2.14, postcss@^8.4.21, postcss@^8.4.23, postcss@^8.4.24:
   version "8.4.24"

@@ -1,6 +1,6 @@
 import React, { forwardRef, useCallback, useRef, useState } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { FiUploadCloud, FiX } from "react-icons/fi";
+import { FiUploadCloud } from "react-icons/fi";
 import { useJsApiLoader, Autocomplete } from "@react-google-maps/api";
 
 interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -146,31 +146,18 @@ export const FilePickingField: React.FC<FilePickingFieldProps> = ({ onFileSelect
 
   return (
     <>
-      <div className="flex w-full justify-start items-center gap-2">
-        <InputField
-          {...props}
-          width={!file ? "100%" : "98%"}
-          value={file ? `${file.name}` : ""}
-          disabled
-          icon={<FiUploadCloud />}
-          onIconButtonPress={() => {
-            if (fileInputRef.current) fileInputRef.current.click();
-          }}
-        />
-        {file && (
-          <button
-            onClick={() => {
-              setFile(undefined);
-              onFileSelected(null);
-
-              if (fileInputRef.current) fileInputRef.current.value = "";
-            }}
-            className="btn btn-circle btn-neutral btn-xs flex justify-center items-center text-[0.89em] text-[#0f0e0b]"
-          >
-            <FiX />
-          </button>
-        )}
-      </div>
+      <InputField
+        {...props}
+        width="100%"
+        value={file ? `${file.name}` : ""}
+        icon={<FiUploadCloud />}
+        onClick={() => {
+          if (fileInputRef.current) fileInputRef.current.click();
+        }}
+        onIconButtonPress={() => {
+          if (fileInputRef.current) fileInputRef.current.click();
+        }}
+      />
       <input type="file" className="hidden" ref={fileInputRef} accept="image/*" onChange={handleFileSelection} />
     </>
   );

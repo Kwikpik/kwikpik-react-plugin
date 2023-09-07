@@ -29,7 +29,7 @@
     "@storybook/testing-library": "^0.0.14-next.2",
     "@types/react": "^18.2.14",
     "autoprefixer": "^10.4.14",
-    "daisyui": "^3.1.7",
+    "daisyui": "^3.7.3",
     "dotenv": "^16.3.1",
     "postcss": "^8.4.24",
     "prop-types": "^15.8.1",
@@ -52,7 +52,7 @@
     "README.md"
   ],
   "dependencies": {
-    "@kwikpik/kwikpik.js": "^1.0.1",
+    "@kwikpik/kwikpik.js": "^1.1.0",
     "@react-google-maps/api": "^2.18.1",
     "react-icons": "^4.10.1"
   }
