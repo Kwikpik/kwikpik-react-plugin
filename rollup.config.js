@@ -25,22 +25,22 @@ module.exports = {
     },
   ],
   plugins: [
-    svg(),
-    peerDepsExternal(),
-    resolve({ extensions, browser: true }),
-    commonjs(),
-    json(),
-    typescript({
-      tsconfig: "./tsconfig.json",
-    }),
     postcss({
       plugins: [require("autoprefixer")(), tailwindcss(require("./tailwind.config"))],
       extensions: [".css"],
       config: { path: "./postcss.config.js" },
-      minimize: false,
+      minimize: true,
       inject: {
         insertAt: "top",
       },
+    }),
+    commonjs(),
+    svg(),
+    peerDepsExternal(),
+    resolve({ extensions, browser: true }),
+    json(),
+    typescript({
+      tsconfig: "./tsconfig.json",
     }),
   ],
 };

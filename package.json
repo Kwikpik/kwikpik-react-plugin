@@ -10,7 +10,8 @@
     "format": "prettier --write **/**/*.{tsx,ts,json,js}",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build:rollup": "rollup -c"
+    "build:rollup": "rollup -c",
+    "chromatic": "npx chromatic --project-token=chpt_524dc16e08cbac1"
   },
   "keywords": [],
   "author": "",
@@ -31,6 +32,7 @@
     "@types/react": "^18.2.14",
     "@types/react-copy-to-clipboard": "^5.0.4",
     "autoprefixer": "^10.4.14",
+    "chromatic": "^7.1.0",
     "daisyui": "^3.7.3",
     "dotenv": "^16.3.1",
     "postcss": "^8.4.24",
@@ -58,5 +60,7 @@
     "@react-google-maps/api": "^2.18.1",
     "react-copy-to-clipboard": "^5.1.0",
     "react-icons": "^4.10.1"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "@kwikpik/kwikpik-react@1.0.0"
 }
