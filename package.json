@@ -11,7 +11,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "build:rollup": "rollup -c",
-    "chromatic": "npx chromatic --project-token=chpt_524dc16e08cbac1"
+    "chromatic": "npx chromatic --project-token=chpt_524dc16e08cbac1",
+    "prepublishOnly": "yarn build:rollup && yarn format"
   },
   "keywords": [],
   "author": "",
