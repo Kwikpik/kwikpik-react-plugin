@@ -1,6 +1,6 @@
 import React, { forwardRef, useCallback, useRef, useState } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { FiUploadCloud, FiX } from "react-icons/fi";
+import { FiUploadCloud } from "react-icons/fi";
 import { useJsApiLoader, Autocomplete } from "@react-google-maps/api";
 
 interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -27,6 +27,14 @@ interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement
   height?: number | string;
   icon?: React.ReactNode;
   onIconButtonPress?: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+interface SelectProps<T> extends React.SelectHTMLAttributes<HTMLSelectElement> {
+  dataProps: Array<{ value: T; key: string }>;
+  onItemSelected?: (val: T) => any;
+  width?: number | string;
+  height?: number | string;
+  icon?: React.ReactNode;
 }
 
 const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
@@ -146,31 +154,18 @@ export const FilePickingField: React.FC<FilePickingFieldProps> = ({ onFileSelect
 
   return (
     <>
-      <div className="flex w-full justify-start items-center gap-2">
-        <InputField
-          {...props}
-          width={!file ? "100%" : "98%"}
-          value={file ? `${file.name}` : ""}
-          disabled
-          icon={<FiUploadCloud />}
-          onIconButtonPress={() => {
-            if (fileInputRef.current) fileInputRef.current.click();
-          }}
-        />
-        {file && (
-          <button
-            onClick={() => {
-              setFile(undefined);
-              onFileSelected(null);
-
-              if (fileInputRef.current) fileInputRef.current.value = "";
-            }}
-            className="btn btn-circle btn-neutral btn-xs flex justify-center items-center text-[0.89em] text-[#0f0e0b]"
-          >
-            <FiX />
-          </button>
-        )}
-      </div>
+      <InputField
+        {...props}
+        width="100%"
+        value={file ? `${file.name}` : ""}
+        icon={<FiUploadCloud />}
+        onClick={() => {
+          if (fileInputRef.current) fileInputRef.current.click();
+        }}
+        onIconButtonPress={() => {
+          if (fileInputRef.current) fileInputRef.current.click();
+        }}
+      />
       <input type="file" className="hidden" ref={fileInputRef} accept="image/*" onChange={handleFileSelection} />
     </>
   );
@@ -204,5 +199,32 @@ export const TextArea: React.FC<TextAreaProps> = ({
       className="w-full h-full px-1 py-1 border-none outline-0"
       onChange={(ev) => onContentChanged && onContentChanged(ev.target.value)}
     ></textarea>
+  </div>
+);
+
+export const Select: React.FC<SelectProps<any>> = ({ dataProps, onItemSelected, width, height, icon, ...props }) => (
+  <div
+    className="flex justify-start items-center gap-2 rounded-[0.5rem] border border-[#abb0ba] px-1 py-1"
+    style={{ width, height }}
+  >
+    {icon && (
+      <button
+        role="button"
+        className={`btn btn-ghost btn-square rounded-[inherit] btn-sm no-animation text-[1em] text-[#5c6370] flex justify-center items-center px-1 py-1 h-full`}
+      >
+        {icon}
+      </button>
+    )}
+    <select
+      onChange={(ev) => onItemSelected && onItemSelected(ev.target.value)}
+      className="w-full px-1 py-1 outline-0 border-0 text-[0.96em] capitalize bg-[transparent] cursor-pointer"
+      {...props}
+    >
+      {dataProps.map((x, index) => (
+        <option key={index} value={x.value}>
+          {x.key}
+        </option>
+      ))}
+    </select>
   </div>
 );

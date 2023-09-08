@@ -1,6 +1,7 @@
 const { default: resolve } = require("@rollup/plugin-node-resolve");
 const { default: commonjs } = require("@rollup/plugin-commonjs");
 const { default: typescript } = require("@rollup/plugin-typescript");
+const { default: json } = require("@rollup/plugin-json");
 const peerDepsExternal = require("rollup-plugin-peer-deps-external");
 const postcss = require("rollup-plugin-postcss");
 const svg = require("rollup-plugin-svg");
@@ -24,21 +25,22 @@ module.exports = {
     },
   ],
   plugins: [
-    svg(),
-    peerDepsExternal(),
-    resolve({ extensions, browser: true }),
-    commonjs(),
-    typescript({
-      tsconfig: "./tsconfig.json",
-    }),
     postcss({
       plugins: [require("autoprefixer")(), tailwindcss(require("./tailwind.config"))],
       extensions: [".css"],
       config: { path: "./postcss.config.js" },
-      minimize: false,
+      minimize: true,
       inject: {
         insertAt: "top",
       },
+    }),
+    commonjs(),
+    svg(),
+    peerDepsExternal(),
+    resolve({ extensions, browser: true }),
+    json(),
+    typescript({
+      tsconfig: "./tsconfig.json",
     }),
   ],
 };
