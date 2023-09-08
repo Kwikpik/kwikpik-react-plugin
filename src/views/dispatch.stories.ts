@@ -14,6 +14,8 @@ type DispatchViewStory = StoryObj<typeof DispatchView>;
 export const Main: DispatchViewStory = {
   args: {
     mapsApiKey: process.env.STORYBOOK_MAPS_API_KEY as string,
+    environment: "dev",
+    apiKey: "9pUEsdGItGffGzTK2dDqQxqjl9rHJsAzB2jJ2Pw2TcOKETBLXF4ILtE0XKr9",
   },
   // play: async ({ canvasElement }) => {
   //   const cv = within(canvasElement);

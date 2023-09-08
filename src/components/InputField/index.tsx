@@ -29,6 +29,14 @@ interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement
   onIconButtonPress?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
+interface SelectProps<T> extends React.SelectHTMLAttributes<HTMLSelectElement> {
+  dataProps: Array<{ value: T; key: string }>;
+  onItemSelected?: (val: T) => any;
+  width?: number | string;
+  height?: number | string;
+  icon?: React.ReactNode;
+}
+
 const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
   ({ onInputFieldChanged, width, height, icon, onIconButtonPress, ...props }, ref) => (
     <div
@@ -191,5 +199,32 @@ export const TextArea: React.FC<TextAreaProps> = ({
       className="w-full h-full px-1 py-1 border-none outline-0"
       onChange={(ev) => onContentChanged && onContentChanged(ev.target.value)}
     ></textarea>
+  </div>
+);
+
+export const Select: React.FC<SelectProps<any>> = ({ dataProps, onItemSelected, width, height, icon, ...props }) => (
+  <div
+    className="flex justify-start items-center gap-2 rounded-[0.5rem] border border-[#abb0ba] px-1 py-1"
+    style={{ width, height }}
+  >
+    {icon && (
+      <button
+        role="button"
+        className={`btn btn-ghost btn-square rounded-[inherit] btn-sm no-animation text-[1em] text-[#5c6370] flex justify-center items-center px-1 py-1 h-full`}
+      >
+        {icon}
+      </button>
+    )}
+    <select
+      onChange={(ev) => onItemSelected && onItemSelected(ev.target.value)}
+      className="w-full px-1 py-1 outline-0 border-0 text-[0.96em] capitalize bg-[transparent] cursor-pointer"
+      {...props}
+    >
+      {dataProps.map((x, index) => (
+        <option key={index} value={x.value}>
+          {x.key}
+        </option>
+      ))}
+    </select>
   </div>
 );
