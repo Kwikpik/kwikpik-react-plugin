@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write **/**/*.{tsx,ts,json,js}",
@@ -53,15 +53,12 @@
     "react-dom": "^18.2.0"
   },
   "files": [
-    "dist",
-    "README.md"
+    "dist"
   ],
   "dependencies": {
     "@kwikpik/kwikpik.js": "^1.1.0",
     "@react-google-maps/api": "^2.18.1",
     "react-copy-to-clipboard": "^5.1.0",
     "react-icons": "^4.10.1"
-  },
-  "readme": "ERROR: No README data found!",
-  "_id": "@kwikpik/kwikpik-react@1.0.0"
+  }
 }
