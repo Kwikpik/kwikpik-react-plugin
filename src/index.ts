@@ -8,5 +8,8 @@ export const useStandaloneDispatchView =
   ({ onClose, visible }: { onClose?: MouseEventHandler<HTMLButtonElement>; visible?: boolean }) =>
     visible ? DispatchView({ ...props, onClose }) : undefined;
 
-export { Button as KwikPikCustomButton, DispatchView as KwikPikDispatchView };
+const ModifiedDispatchView = ({ visible, ...props }: DispatchViewProps & { visible?: boolean }) =>
+  visible ? DispatchView({ ...props }) : undefined;
+
+export { Button as CustomButton, ModifiedDispatchView as DispatchView };
 export * from "./context";
