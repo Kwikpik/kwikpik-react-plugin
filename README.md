@@ -48,3 +48,22 @@ The following props are passed to the `KwikPikContextProvider` component:
 Example
 
 ![example](./example1.png)
+
+The `useKwikPikContext` function can be used to retrieve the values of these props like so
+
+```jsx
+// Removed for brevity
+const { apiKey, mapsApiKey, environment } = useKwikPikContext();
+```
+
+You can use the `useContextDispatchView` function to create a configured `DispatchView`. The following optional props can be passed to the created component
+
+| Prop    | Type     | Description                                                        |
+| ------- | -------- | ------------------------------------------------------------------ |
+| visible | boolean  | Whether the dispatch modal is visible or not                       |
+| onClose | function | Function that gets executed when the "x" labeled button is clicked |
+
+
+![example](./example2.png)
+
+From the snapshot above, you can see that it is also possible to use a standalone dispatch view that doesn't depend on a context provider.
