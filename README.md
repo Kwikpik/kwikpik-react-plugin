@@ -63,7 +63,24 @@ You can use the `useContextDispatchView` function to create a configured `Dispat
 | visible | boolean  | Whether the dispatch modal is visible or not                       |
 | onClose | function | Function that gets executed when the "x" labeled button is clicked |
 
-
 ![example](./example2.png)
 
-From the snapshot above, you can see that it is also possible to use a standalone dispatch view that doesn't depend on a context provider.
+From the snapshot above, you can see that it is also possible to use a standalone dispatch view that doesn't depend on a context provider by calling `useStandaloneDispatchView`.
+
+You can also use the `DispatchView` component directly and configure it like so:
+
+```jsx
+import { DispatchView } from "@kwikpik/kwikpik-react";
+
+<DispatchView
+  apiKey="YOUR_API_KEY"
+  mapsApiKey="YOUR_GOOGLE_MAPS_API_KEY"
+  environment="prod"
+  visible={true | false}
+  onClose={() => {
+    // Do something here
+  }}
+/>;
+```
+
+![example](./kwikpik.gif)
