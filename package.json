@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write **/**/*.{tsx,ts,json,js}",
+    "format": "prettier --write **/**/*.{tsx,ts,json,js,md}",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "build:rollup": "rollup -c",
