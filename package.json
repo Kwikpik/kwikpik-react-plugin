@@ -1,13 +1,13 @@
 {
   "name": "@kwikpik/kwikpik-react",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write **/**/*.{tsx,ts,json,js}",
+    "format": "prettier --write **/**/*.{tsx,ts,json,js,md}",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "build:rollup": "rollup -c",
@@ -19,6 +19,7 @@
   "license": "ISC",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-image": "^3.0.2",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-typescript": "^11.1.2",
@@ -54,14 +55,14 @@
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "*.png",
+    "*.gif"
   ],
   "dependencies": {
     "@kwikpik/kwikpik.js": "^1.1.0",
     "@react-google-maps/api": "^2.18.1",
     "react-copy-to-clipboard": "^5.1.0",
     "react-icons": "^4.10.1"
-  },
-  "readme": "ERROR: No README data found!",
-  "_id": "@kwikpik/kwikpik-react@1.0.0"
+  }
 }

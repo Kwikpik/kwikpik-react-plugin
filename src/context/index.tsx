@@ -26,7 +26,7 @@ export const KwikPikContextProvider = ({
 
 export const useKwikPikContext = () => useContext(KwikPikContext);
 
-export const useKwikPikContextDispatchView = () => {
+export const useContextDispatchView = () => {
   const { apiKey, mapsApiKey, environment } = useKwikPikContext();
   return ({ onClose, visible }: { onClose?: React.MouseEventHandler<HTMLButtonElement>; visible?: boolean }) =>
     visible ? DispatchView({ apiKey, mapsApiKey, environment, onClose }) : undefined;

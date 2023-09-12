@@ -2,9 +2,10 @@ const { default: resolve } = require("@rollup/plugin-node-resolve");
 const { default: commonjs } = require("@rollup/plugin-commonjs");
 const { default: typescript } = require("@rollup/plugin-typescript");
 const { default: json } = require("@rollup/plugin-json");
+const { default: image } = require("@rollup/plugin-image");
 const peerDepsExternal = require("rollup-plugin-peer-deps-external");
 const postcss = require("rollup-plugin-postcss");
-const svg = require("rollup-plugin-svg");
+// const svg = require("rollup-plugin-svg");
 const tailwindcss = require("tailwindcss");
 
 const packageJson = require("./package.json");
@@ -35,7 +36,7 @@ module.exports = {
       },
     }),
     commonjs(),
-    svg(),
+    image(),
     peerDepsExternal(),
     resolve({ extensions, browser: true }),
     json(),
