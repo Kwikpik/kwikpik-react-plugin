@@ -47,7 +47,28 @@ The following props are passed to the `KwikPikContextProvider` component:
 
 Example
 
-![example](./example1.png)
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { KwikPikContextProvider } from "@kwikpik/kwikpik-react";
+import reportWebVitals from "./reportWebVitals";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <KwikPikContextProvider apiKey="YOUR_API_KEY" environment="dev" mapsApiKey="YOUR_GOOGLE_API_KEY">
+      <App />
+    </KwikPikContextProvider>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+```
 
 The `useKwikPikContext` function can be used to retrieve the values of these props like so
 
@@ -63,7 +84,36 @@ You can use the `useContextDispatchView` function to create a configured `Dispat
 | visible | boolean  | Whether the dispatch modal is visible or not                       |
 | onClose | function | Function that gets executed when the "x" labeled button is clicked |
 
-![example](./example2.png)
+```jsx
+import "./App.css";
+import { useState } from "react";
+import { useKwikPikContextDispatchView, useStandaloneDispatchView } from "@kwikpik/kwikpik-react";
+
+function App() {
+  const [showContextLoadedView, setShowLoadedContextView] = useState(false);
+  const [hooksStandaloneView, setShowHooksStandaloneView] = useState(false);
+  const ContextKwikPikDispatchView = useKwikPikContextDispatchView();
+  const HooksStandaloneKwikPikDispatchView = useStandaloneDispatchView({
+    apiKey: "YOUR_API_KEY",
+    mapsApiKey: "YOUR_GOOGLE_API_KEY",
+    environment: "dev",
+  });
+  return (
+    <div className="App">
+      <ContextKwikPikDispatchView visible={showContextLoadedView} onClose={() => setShowLoadedContextView(false)} />
+      <HooksStandaloneKwikPikDispatchView
+        visible={hooksStandaloneView}
+        onClose={() => setShowHooksStandaloneView(false)}
+      />
+      <button onClick={() => setShowLoadedContextView(true)}>Dispatch view with loaded context</button>
+      <div style={{ marginLeft: 10, marginRight: 10 }}></div>
+      <button onClick={() => setShowHooksStandaloneView(true)}>Standalone dispatch view with hooks</button>
+    </div>
+  );
+}
+
+export default App;
+```
 
 From the snapshot above, you can see that it is also possible to use a standalone dispatch view that doesn't depend on a context provider by calling `useStandaloneDispatchView`.
 
@@ -83,4 +133,4 @@ import { DispatchView } from "@kwikpik/kwikpik-react";
 />;
 ```
 
-![example](./kwikpik.gif)
+![example](https://drive.google.com/uc?id=1232IKY8o_KTLW8NiGE0UuTiCsFbkZUzR)
