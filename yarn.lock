@@ -1636,10 +1636,10 @@
   resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.4.0.tgz#08d6c5e20cf7e4cc02fd181c4b0c225cd31dbb60"
   integrity sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==
 
-"@kwikpik/kwikpik.js@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@kwikpik/kwikpik.js/-/kwikpik.js-1.1.0.tgz#0caede41426bcb37ea83653ddbb33c5aea7541fb"
-  integrity sha512-8NczqcD7adjR+5S77bpbM8o+kjmL5r9CnF/S6nPvaR+vs1oL91+xUPppTKSGzUVLFnVpqryk5O9Kbm6qufSc2w==
+"@kwikpik/kwikpik.js@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@kwikpik/kwikpik.js/-/kwikpik.js-1.1.1.tgz#ad3334428324f519bbc14bd29baed330e907036b"
+  integrity sha512-9uxv7d5TAwOUTJ3XrbXG1DHvJhBCDgwq+HGDIFeG7ZbeER80nkXZHfRYtW1WEkm55X/cC7L2PbFXW9nZc00Wyw==
   dependencies:
     assert "^2.0.0"
     axios "^1.4.0"

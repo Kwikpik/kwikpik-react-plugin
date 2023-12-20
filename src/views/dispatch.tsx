@@ -150,9 +150,6 @@ export default function DispatchView({ mapsApiKey, apiKey, onClose, environment 
   const confirmRequest = useCallback(async () => {
     try {
       setConfirmationLoading(true);
-      const requestInfo = await api.requests.getSingleRequest(newRequestId).call();
-
-      await api.accounts.payForRequest({ requestId: newRequestId, amount: requestInfo.amount }).send();
       await api.requests.confirmDispatchRequest(newRequestId).send();
 
       setConfirmationLoading(false);
