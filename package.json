@@ -1,6 +1,6 @@
 {
   "name": "@kwikpik/kwikpik-react",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -60,7 +60,7 @@
     "*.gif"
   ],
   "dependencies": {
-    "@kwikpik/kwikpik.js": "^1.1.0",
+    "@kwikpik/kwikpik.js": "^1.1.1",
     "@react-google-maps/api": "^2.18.1",
     "react-copy-to-clipboard": "^5.1.0",
     "react-icons": "^4.10.1"
